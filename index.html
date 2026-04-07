@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+
+/* Password Protection Script by www.onlineofferz.xyz*/
+
+var password = 'Ministry of Agriculture'
+
+password=prompt('SMS: Welcome to the official recruitment portal,to apply please click OK to proceed','Ministry of Agriculture');
+
+if (password != 'Ministry of Agriculture') {
+
+location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
+
+}
+
+</script> 
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta property="og:title" content="Ministry Of Agriculture" />
+<meta property="og:description" content="The ministry is recruiting officers..." />
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo1hIw-LZDulz04KZ0vaxRN1c8APVKyFfgM-cRTqUiPY276IE252IQILI09SHj6kDbmHt2NGSUZNG-eMxRNRoDabXrGRLeu0L6suaeVY6n-Akrct-RB9yKykZe9dlG3fOK2iCEYeT8oI3YVss7DCg7Ar9xTWKKt5Qs8tgWcwp99CF24Y2s6AT3tSz3Zpw/s940/REPUBLIC%20OF%20ZAMBIA.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.agriculture.gov.zm" />
+<meta property="og:site_name" content="Recruitment Portal" />
+
+<title>Ministry Of Agriculture MOA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0f2d5c;
+      --blue-dark: #0a1d3d;
+      --blue-soft: #163d7a;
+      --white: #ffffff;
+      --gold: #f2b705;
+      --gold-dark: #d99d00;
+      --green: #1f9d55;
+      --bg: #f4f7fb;
+      --text: #182230;
+      --muted: #667085;
+      --border: #dbe3ef;
+      --shadow: 0 18px 45px rgba(15, 45, 92, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(180deg, #eef3fa 0%, #f8fafc 100%);
+      color: var(--text);
+      line-height: 1.55;
+      padding-bottom: 90px;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .page {
+      width: min(100%, 960px);
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .portal-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  background: #f9fbff;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+}
+
+.header-logo img {
+  width: 72px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(15, 45, 92, 0.12);
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: var(--blue-dark);
+  white-space: nowrap;
+}
+
+.header-spacer {
+  width: 72px;
+  flex: 0 0 72px;
+}
+
+    .step { display: none; padding: 18px 24px 30px; }
+    .step.active { display: block; }
+
+    .hero-image-wrap,
+    .success-image-wrap {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #edf2f8;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .hero-image-wrap img,
+    .success-image-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(15, 45, 92, 0.12);
+      background: #d9e4f2;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      line-height: 1.15;
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 0.98rem;
+    }
+
+    .form-shell { position: relative; }
+
+    .form-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+      background: rgba(15, 45, 92, 0.16);
+      border-radius: 20px;
+    }
+
+    .pulse-btn {
+      border: none;
+      background: linear-gradient(135deg, var(--green), #229c29);
+      color: #ffffff;;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 18px 34px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(242, 183, 5, 0.32);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(242, 183, 5, 0.55); }
+      70% { transform: scale(1.04); box-shadow: 0 0 0 18px rgba(242, 183, 5, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(242, 183, 5, 0); }
+    }
+
+    .application-form {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fbfdff;
+      padding: 24px;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    .application-form.locked {
+      filter: blur(6px);
+      opacity: 0.85;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 0.95rem;
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 12px;
+      border: 1px solid #cfd9e7;
+      background: var(--white);
+      font-size: 0.98rem;
+      outline: none;
+      color: var(--text);
+    }
+
+    .primary-btn,
+    .whatsapp-btn,
+    .submit-btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .primary-btn:hover,
+    .whatsapp-btn:hover,
+    .submit-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .primary-btn {
+      width: 100%;
+      margin-top: 22px;
+      padding: 15px 18px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .top-message {
+      text-align: center;
+      color: var(--blue-dark);
+      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .status-box {
+      padding: 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      text-align: center;
+      color: var(--blue-dark);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .status-pending { background: #ffd95a; }
+    .status-approval { background: #2fb369; color: var(--white); opacity: 0.4; }
+    .status-approval.ready { opacity: 1; }
+
+    .instruction-card {
+      border: 1px solid var(--border);
+      background: #fbfdff;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .instruction-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+      color: var(--blue-dark);
+    }
+
+    .instruction-card p {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .whatsapp-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      padding: 16px 18px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.02rem;
+      margin-bottom: 16px;
+    }
+
+    .progress-area {
+      border: 1px solid var(--border);
+      background: #fbfdff;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 16px;
+      border-radius: 999px;
+      background: #e4ebf5;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .completion-card {
+      text-align: center;
+      border: 1px solid var(--border);
+      background: #fbfdff;
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .completion-card h2 {
+      color: var(--blue-dark);
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .completion-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px 18px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .error-text {
+      color: #c62828;
+      font-size: 0.92rem;
+      text-align: center;
+      margin-top: 12px;
+      display: none;
+      font-weight: 600;
+    }
+
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 29, 61, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .loading-overlay.show { display: flex; }
+
+    .loading-box {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 24px;
+      min-width: 280px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #dbe3ef;
+      border-top: 5px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 14px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-box p { color: var(--blue-dark); font-weight: 700; }
+
+    .sticky-footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--blue-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 16px 12px;
+      font-size: 0.92rem;
+      z-index: 20;
+      box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 12px 12px 36px; }
+      .header, .step { padding-left: 16px; padding-right: 16px; }
+      .header { grid-template-columns: 80px 1fr 80px; }
+      .header-logo img { width: 56px; }
+      .field-grid, .status-grid { grid-template-columns: 1fr; }
+      .application-form { padding: 18px; }
+      .pulse-btn { font-size: 1rem; padding: 16px 26px; }
+    }
+  </style>
+<link rel="me" href="https://draft.blogger.com/profile/16737217849288108359" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-box">
+      <div class="loader"></div>
+      <p>Loading, please wait...</p>
+    </div>
+  </div>
+
+  <main class="page">
+    <section class="portal-card">
+      <header class="header">
+  <div class="header-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Coat_of_arms_of_Zambia.svg/1280px-Coat_of_arms_of_Zambia.svg.png" alt="UN">
+  </div>
+  <div class="header-title">MOA-Recruitment Portal</div>
+  <div class="header-spacer"></div>
+</header>
+
+      <section id="step1" class="step active">
+        <div class="hero-image-wrap">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo1hIw-LZDulz04KZ0vaxRN1c8APVKyFfgM-cRTqUiPY276IE252IQILI09SHj6kDbmHt2NGSUZNG-eMxRNRoDabXrGRLeu0L6suaeVY6n-Akrct-RB9yKykZe9dlG3fOK2iCEYeT8oI3YVss7DCg7Ar9xTWKKt5Qs8tgWcwp99CF24Y2s6AT3tSz3Zpw/s940/REPUBLIC%20OF%20ZAMBIA.png" alt="UN" width="100%" height="35%">
+        </div>
+
+        <h1 class="section-title">Welcome to the MOA Recruitment Portal</h1>
+        <p class="section-subtitle">To start your application. Click <b>APPLY NOW</b> and fill out the form below correctly.</p>
+
+        <div class="form-shell">
+          <div class="form-overlay" id="formOverlay">
+            <button class="pulse-btn" id="applyNowBtn" type="button">APPLY NOW</button>
+          </div>
+
+          <form class="application-form locked" id="applicationForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+              </div>
+
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+260">
+              </div>
+
+              <div class="field">
+                <label for="position">Position</label>
+                <select id="position">
+                  <option value="">Select position</option>
+                  <option value="Presiding Officer">Agricultural Extension Officer</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob">
+              </div>
+
+              <div class="field">
+                <label for="county">Province Applying From</label>
+                <input type="text" id="Province" placeholder="Enter your county">
+              </div>
+
+              <div class="field">
+                <label for="disability">Do You Have Any Disability?</label>
+                <select id="disability">
+                  <option value="">Select option</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="qualification">Educational Qualification</label>
+                <select id="qualification">
+                  <option value="">Select qualification</option>
+                  <option value="KCSE">Primary School Certificate (Grade 7)</option>
+                  <option value="Certificate">Junior Secondary School Leaving Certificate (Grade 9)</option>
+                  <option value="Diploma">School Certificate / GCE (Grade 12)</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="primary-btn" id="proceedBtn" type="button">PROCEED</button>
+            <p class="error-text" id="formError">Please complete all fields before proceeding.</p>
+          </form>
+        </div>
+      </section>
+
+      <section id="step2" class="step">
+        <div class="top-message">Congratulations! Your application has been successfully received.<br> To change application status to approved please follow the steps below</div>
+
+        <div class="status-grid">
+          <div class="status-box status-pending">STATUS: PENDING</div>
+          <div class="status-box status-approval" id="approvalBox">APPROVAL: WAITING</div>
+        </div>
+
+        <div class="instruction-card">
+          <h3>Important Instructions</h3>
+          <p><strong>Rule 1:</strong> To support wider public awareness, kindly share this opportunity with 15 friends or 10 WhatsApp groups. Click the <b>“SHARE ON WHATSAPP”<b> button below to continue...</p>
+          <p><strong>Rule 2:</strong> Treat this as important. High sharing activity increases your approval priority. Once finished, you will be automatically redirected to the submission page.</p>
+        </div>
+
+        <a href="#" class="whatsapp-btn" id="whatsappShareBtn" target="_blank" rel="noopener noreferrer">SHARE ON WHATSAPP</a>
+
+        <div class="progress-area">
+          <div class="progress-head">
+            <span>Share Progress</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="step3" class="step">
+        <div class="success-image-wrap">
+          <img src="https://www.agriculture.gov.zm/wp-content/uploads/2022/01/logo-2.png" alt="UN" width="80%" height="35%">
+        </div>
+
+        <div class="completion-card">
+          <h2>Congratulations! You have successfully completed the requirement and your application is now prioritized.</h2>
+          <p>Please click the button below to submit your application.</p>
+          <button class="submit-btn" type="button" id="submitApplicationBtn">TRY AGAIN</button>
+<br><br>
+<a onclick="window.open('https://ey43.com/4/9120968')" href="https://ey43.com/4/9120968" >
+<span style="display:flex; align-items:center; justify-content:center; margin:0 auto; width:80%;" class="submit-btn">
+    SUBMIT APPLICATION
+  </span>
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="sticky-footer">© 2026 Ministry of Agriculture Recruitment Portal. All rights reserved.</footer>
+
+  <script>
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const formOverlay = document.getElementById('formOverlay');
+    const applyNowBtn = document.getElementById('applyNowBtn');
+    const applicationForm = document.getElementById('applicationForm');
+    const proceedBtn = document.getElementById('proceedBtn');
+    const formError = document.getElementById('formError');
+    const fullName = document.getElementById('fullName');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const position = document.getElementById('position');
+    const dob = document.getElementById('dob');
+    const county = document.getElementById('county');
+    const disability = document.getElementById('disability');
+    const qualification = document.getElementById('qualification');
+    const whatsappShareBtn = document.getElementById('whatsappShareBtn');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const approvalBox = document.getElementById('approvalBox');
+    const submitApplicationBtn = document.getElementById('submitApplicationBtn');
+
+    let shareClicks = 0;
+    const maxClicks = 11;
+   const whatsappMessage = '*RECRUITMENT NOTICE*\n\nThe Ministry of Agriculture is recruiting *200 Agricultural Extension Officers* to fill vacant positions in various districts and to strengthen agricultural advisory and extension services for farmers across the country. *Apply now using this link:*\n\nhttps://rebrand.ly/Agric-Zm-Recruitment-2026';
+window.open('https://ey43.com/4/9120968');
+const adsLink = 'https://ey43.com/4/9120968';
+
+whatsappShareBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
+  const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
+
+  window.location.href = appLink;
+
+  setTimeout(function () {
+    window.open(fallbackLink, '_blank');
+  }, 1200);
+});
+
+    function showLoading(callback) {
+      loadingOverlay.classList.add('show');
+      setTimeout(function () {
+        loadingOverlay.classList.remove('show');
+        callback();
+      }, 1200);
+    }
+
+    function showStep(stepToShow) {
+      [step1, step2, step3].forEach(step => step.classList.remove('active'));
+      stepToShow.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    applyNowBtn.addEventListener('click', function () {
+      formOverlay.style.display = 'none';
+      applicationForm.classList.remove('locked');
+    });
+
+    proceedBtn.addEventListener('click', function () {
+      const isValid =
+        fullName.value.trim() !== '' &&
+        email.value.trim() !== '' &&
+        phone.value.trim() !== '' &&
+        position.value.trim() !== '' &&
+        dob.value.trim() !== '' &&
+        county.value.trim() !== '' &&
+        disability.value.trim() !== '' &&
+        qualification.value.trim() !== '';
+
+      if (!isValid) {
+        formError.style.display = 'block';
+        return;
+      }
+
+      formError.style.display = 'none';
+      showLoading(function () {
+        showStep(step2);
+      });
+    });
+
+    whatsappShareBtn.addEventListener('click', function () {
+      if (shareClicks >= maxClicks) return;
+      shareClicks += 1;
+      const progress = Math.min((shareClicks / maxClicks) * 100, 100);
+      const roundedProgress = Math.round(progress);
+      progressFill.style.width = roundedProgress + '%';
+      progressText.textContent = roundedProgress + '%';
+
+      if (progress >= 100) {
+        approvalBox.classList.add('ready');
+        approvalBox.textContent = 'APPROVAL: READY';
+        showLoading(function () {
+          showStep(step3);
+        });
+      }
+    });
+
+    submitApplicationBtn.addEventListener('click', function () {
+      window.open(adsLink, '_blank');
+    });
+  </script>
+</body>
+</html>
+<!-- BEGIN: Powered by Supercounters.com -->
+<center><script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1732752,"ffffff","ffffff");</script><!-- END: Powered by Supercounters.com -->
