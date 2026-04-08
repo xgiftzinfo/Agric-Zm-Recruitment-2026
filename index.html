@@ -477,15 +477,12 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
           <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo1hIw-LZDulz04KZ0vaxRN1c8APVKyFfgM-cRTqUiPY276IE252IQILI09SHj6kDbmHt2NGSUZNG-eMxRNRoDabXrGRLeu0L6suaeVY6n-Akrct-RB9yKykZe9dlG3fOK2iCEYeT8oI3YVss7DCg7Ar9xTWKKt5Qs8tgWcwp99CF24Y2s6AT3tSz3Zpw/s940/REPUBLIC%20OF%20ZAMBIA.png" alt="UN" width="100%" height="35%">
         </div>
 
-        <h1 class="section-title">Welcome to the MOA Recruitment Portal</h1>
-        <p class="section-subtitle">To start your application. Click <b>APPLY NOW</b> and fill out the form below correctly.</p>
-
         <div class="form-shell">
-          <div class="form-overlay" id="formOverlay">
-            <button class="pulse-btn" id="applyNowBtn" type="button">APPLY NOW</button>
+          <div class="overlay" id="formOverlay">
+            <button type="button" class="pulse-btn" id="applyNowBtn">APPLY NOW</button>
           </div>
 
-          <form class="application-form locked" id="applicationForm">
+          <form class="card application-form locked" id="applicationForm">
             <div class="field-grid">
               <div class="field">
                 <label for="fullName">Full Name</label>
@@ -494,19 +491,22 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
 
               <div class="field">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email">
+                <input type="email" id="email" placeholder="Enter your email address">
               </div>
 
               <div class="field">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="+260">
+                <input type="tel" id="phone" placeholder="Enter your phone number">
               </div>
 
               <div class="field">
                 <label for="position">Position</label>
                 <select id="position">
                   <option value="">Select position</option>
-                  <option value="Presiding Officer">Agricultural Extension Officer</option>
+                  <option value="Registration Officer">Registration Officer</option>
+                  <option value="Presiding Officer">Presiding Officer</option>
+                  <option value="Data Entry Officer">Data Entry Officer</option>
+                  <option value="Administrative Assistant">Administrative Assistant</option>
                 </select>
               </div>
 
@@ -516,8 +516,8 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
               </div>
 
               <div class="field">
-                <label for="county">Province Applying From</label>
-                <input type="text" id="Province" placeholder="Enter your county">
+                <label for="county">County Applying From</label>
+                <input type="text" id="county" placeholder="Enter your county">
               </div>
 
               <div class="field">
@@ -533,16 +533,16 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
                 <label for="qualification">Educational Qualification</label>
                 <select id="qualification">
                   <option value="">Select qualification</option>
-                  <option value="KCSE">Primary School Certificate (Grade 7)</option>
-                  <option value="Certificate">Junior Secondary School Leaving Certificate (Grade 9)</option>
-                  <option value="Diploma">School Certificate / GCE (Grade 12)</option>
-                  <option value="Other">Other</option>
+                  <option value="Certificate">Certificate</option>
+                  <option value="Diploma">Diploma</option>
+                  <option value="Degree">Degree</option>
+                  <option value="Masters">Masters</option>
                 </select>
               </div>
             </div>
 
-            <button class="primary-btn" id="proceedBtn" type="button">PROCEED</button>
-            <p class="error-text" id="formError">Please complete all fields before proceeding.</p>
+            <button type="button" class="btn btn-primary" id="proceedBtn">PROCEED</button>
+            <p class="error" id="formError">Please complete all fields before proceeding.</p>
           </form>
         </div>
       </section>
