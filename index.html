@@ -542,7 +542,6 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
             </div>
 
             <button class="primary-btn" id="proceedBtn" type="button">PROCEED</button>
-            <p class="error-text" id="formError">Please complete all fields before proceeding.</p>
           </form>
         </div>
       </section>
@@ -630,11 +629,8 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
       });
 
       if (!isValid) {
-        formError.style.display = "block";
-        return;
-      }
-
-      formError.style.display = "none";
+  return;
+}
 
       showLoading(function () {
         showStep(step2);
